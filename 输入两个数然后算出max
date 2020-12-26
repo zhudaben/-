@@ -1,0 +1,18 @@
+#include<stdio.h>
+MAX(int x,int y){
+	if(x>y){
+		return x;
+	}
+	else{
+		return y;
+	}
+}
+int main(){
+	int num1,num2;
+	int max;
+	printf("输入两个是比较大小 ");
+	scanf("%d \n%d",&num1,&num2);
+	max=MAX(num1,num2);
+	printf("max%d",max);
+	return 0;
+} 

@@ -1,0 +1,156 @@
+#include<stdio.h>
+int qjbl=0;
+int main(){
+    int h,m;
+	int k;
+	h=xhxm();
+	if(h==1){
+		for(k=1; k>0; k++){
+			printf("请选择是否要继续(退出0继续非0数字)");
+			scanf("%d",&m);
+			if(m==0){
+				break;
+			}
+			else{
+	  		int qjbl=meun();
+			system("cls");
+	        switch(qjbl){
+				case 1:sxhs();
+				break;    			//sxhs指的是水仙花数 
+				case 2:cfkj();
+				break;  			//cfkj指的是乘法口诀 
+				case 3:lplplp();
+				break; 				 //lplplp指的是选择老婆 
+				case 4:zjcd();
+		 		break;  		 		//zjcd指的是字节长度 
+			}
+			}
+		}			
+	
+	}
+	return 0;
+} 
+int meun(){
+		printf("					************************\n");
+		system("color 3c");
+		printf("					********菜单选择********\n");
+		system("color 4b");
+		printf("					******1.水仙花数********\n");
+		system("color 6b");
+		printf("					******2.乘法口诀********\n");
+		system("color 7b");
+		printf("					******3.老婆选择********\n");
+		system("color 8b");
+		printf("					**4.显示字符的字节长度**\n");
+		system("color 0a");
+		scanf("%d",&qjbl);
+		while(qjbl>5||qjbl<0){
+			printf("选输入: 择有误\n请重新");
+			scanf("%d",&qjbl);
+		}
+		return qjbl;
+}
+int sxhs(){
+	int q1,q2,q3,q4;
+	for(q1=100; q1<1000; q1++){
+		q2=q1/100;
+		q3=q1/10%10;
+		q4=q1%10;
+		if(q1==q2*q2*q2+q3*q3*q3+q4*q4*q4){
+		printf("水仙花数:%d\n",q1);
+		}
+	}
+	system("color 2b");
+	printf("\n");
+	return q1;
+}
+int cfkj(){
+	int c1,c2;
+	for(c1=1; c1<10; c1++){
+		for(c2=1; c2<10; c2++){
+			printf("%d*%d=%d ",c1,c2,c1*c2);
+	    }
+		printf("\n");
+    }
+	printf("\n");
+	system("color 3c");
+	return c1*c2;
+}
+int lplplp(){
+	printf("\t\t\t\t\t从零开始的异世界生活老婆\n从1~8选择一个数\n猜猜你的老婆是谁\n\t		\t\t\t请输入1~8: "); 
+	scanf("%d",&qjbl);
+	switch(qjbl){
+		case 1:
+		printf("\t\t\t\t\t\t你的老婆是雷姆");
+		break;
+		case 2:
+		printf("\t\t\t\t\t\t你的老婆是艾米莉亚");
+		break;
+		case 3:
+		printf("\t\t\t\t\t\t你的老婆是拉姆");
+		break;
+		case 4:
+		printf("\t\t\t\t\t\t你的老婆是肠姐");
+		break;
+		case 5:
+		printf("\t\t\t\t\t\t你的老婆是贝蒂");
+		break;
+		case 6:
+		printf("\t\t\t\t\t\t你的老婆是莎提拉");
+		break;
+		case 7:
+		printf("\t\t\t\t\t\t你的老婆是爱姬多娜");
+		break;
+		case 8:
+		printf("\t\t\t\t\t\t你的老婆是地龙");
+		break;
+	}
+	system("color 7b");
+	return qjbl;
+}
+void zjcd(){
+printf("\n\n\t\t\tchar类型在内存中所占字节长度%d\n\t\t\t",sizeof(char));
+	printf("short类型在内存中所占字节长度%d\n\t\t\t",sizeof(short));
+	printf("long类型在内存中所占字节长度%d\n\t\t\t",sizeof(long));
+	printf("int类型在内存中所占字节长度%d\n\t\t\t",sizeof(int));
+	printf("float类型在内存中所占字节长度%d\n\t\t\t",sizeof(float));
+	printf("double类型在内存中所占字节长度%d\n\t\t\t",sizeof(double)); 
+	system("color 8f");
+}
+int xhxm(){
+	int x=1;
+	int f,g,h;
+	char ch[]="zhuyiming";
+	char chch[9];
+	printf("请输入用户名:");
+	scanf("%s",chch);
+	f= strcmp(ch,chch);
+	printf("请输入密码: ");
+	scanf("%d",&g);
+	if(f==0&&g==250250){
+		printf("登陆成功: ");
+		x=1;
+		return x;
+			 
+	}
+	if(f!=0||g!=250250){
+		printf("输入错误,还有两次机会\n");
+		for(h=1; h>=0; h--){
+			printf("请输入用户名\n:");
+			scanf("%s",chch);
+			f= strcmp(ch,chch);
+			printf("请输入密码: ");
+			scanf("%d",&g);
+			if(f==0&&g==250250){
+			printf("登陆成功: ");
+			x=1;
+			return x;
+	    	break;
+			}	
+		printf("还有%d次机会\n",h);
+		printf("用户名密码输入错误\n");
+		
+		}
+    }
+  
+}
